@@ -1,0 +1,31 @@
+server:
+  port: 8089
+
+spring:
+  profiles:
+    active: dev
+  servlet:
+    multipart:
+      max-file-size: 1024MB
+      max-request-size: 1024MB
+  redis:
+    #数据库索引
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    password:
+    #连接超时时间
+    timeout: 5000
+
+#logging:
+#  config: classpath:config/logback-spring.xml
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*Mapper.xml
+  global-config:
+    db-config:
+      capital-mode: true
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+      id-type:
+      field-strategy: not_null
+      db-type: mysql
