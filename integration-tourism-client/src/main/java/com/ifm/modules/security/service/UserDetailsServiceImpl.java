@@ -43,27 +43,25 @@ public class UserDetailsServiceImpl implements UserDetailsService {
             searchDb = false;
         }
         if (searchDb) {
-            UserInfo userInfo;
+            UserInfo user;
             try {
                 //根据用户名查询用户信息
-                userInfo = userInfoService.findByName(username);
+                user = userInfoService.findByName(username);
             } catch (EntityNotFoundException e) {
                 // SpringSecurity会自动转换UsernameNotFoundException为BadCredentialsException
                 throw new UsernameNotFoundException("", e);
             }
-            if (userInfo == null) {
+            if (user == null) {
                 throw new UsernameNotFoundException("用户名或密码错误");
             } else {
 //                if (!user.getEnabled()) {
 //                    throw new BadRequestException("账号未激活！");
 //                }
-
                 //装权限
                 List<GrantedAuthority> authorities = Lists.newArrayList();
                 GrantedAuthority grantedAuthority = new SimpleGrantedAuthority("不知道");
                 authorities.add(grantedAuthority);
-
-                jwtUserDto = new JwtUserDto(userInfo, authorities);
+                jwtUserDto = new JwtUserDto(user, authorities);
                 //把用户信息保存在缓存里面
                 userDtoCache.put(username, jwtUserDto);
             }

@@ -57,7 +57,7 @@ public class SysQuartzJobServiceImpl extends BaseServiceImpl<SysQuartzJobMapper,
     }
 
     @Override
-    public Result delete(long[] arr) {
+    public boolean doRemoveeIds(long[] arr) {
 
         return baseMapper.doRemoveeIds(arr);
 

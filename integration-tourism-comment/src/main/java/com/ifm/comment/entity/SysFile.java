@@ -1,4 +1,4 @@
-package com.ifm.modules.system.entity;
+package com.ifm.comment.entity;
 
 import com.ifm.comment.base.entity.DataEntity;
 import io.swagger.annotations.ApiModel;

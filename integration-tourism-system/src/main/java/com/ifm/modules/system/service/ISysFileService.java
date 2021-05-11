@@ -2,7 +2,7 @@
 package com.ifm.modules.system.service;
 
 import com.ifm.comment.base.service.BaseService;
-import com.ifm.modules.system.entity.SysFile;
+import com.ifm.comment.entity.SysFile;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
@@ -18,5 +18,5 @@ import java.util.List;
 */
 public interface ISysFileService extends BaseService<SysFile> {
 
-    List  uploadPictures(MultipartFile[] files);
+    List  uploadPictures(MultipartFile files);
 }

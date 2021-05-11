@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ifm.modules.client.mapper.PictureRelevanceMapper">
+
+
+    <select id="listAllById" resultType="com.ifm.comment.entity.PictureRelevance" parameterType="Long">
+        select sf.id as fileId ,sf.echo as  echo
+      from picture_relevance pr
+      left join sys_file sf on sf.id=pr.file_id
+      and pr.status =0 and pr.deleted=0 and sf.status=0 and sf.deleted=0
+      where pr.relevance_id=#{id}
+
+    </select>
+</mapper>

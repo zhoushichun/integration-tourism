@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ifm.modules.client.mapper.SysScenicSpotMapper">
+
+    <select id="selectLists" resultType="com.ifm.modules.client.entity.vo.SysScenicSpotVo">
+      select sss.id,sss.name,sss.picture_adds ,MIN(pp.price) as price
+      from sys_scenic_spot sss
+      left join project_price pp on sss.id=pp.scenic_spot_id
+      and sss.status =0 and sss.deleted=0 and pp.status=0 and pp.deleted=0
+
+    </select>
+</mapper>

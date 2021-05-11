@@ -22,7 +22,7 @@ public interface ISysQuartzJobService extends BaseService<SysQuartzJob> {
 
     Result add(SysQuartzJob entity);
 
-    Result delete(long[] arr);
+    boolean doRemoveeIds(long[] arr);
 
     Result deleteIds(long[] ids);
 

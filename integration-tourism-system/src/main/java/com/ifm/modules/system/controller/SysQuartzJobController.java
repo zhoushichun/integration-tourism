@@ -74,7 +74,8 @@ public class SysQuartzJobController extends BaseController {
     @PostMapping("/delete")
     public Result delete(@RequestParam long[] arr){
 
-    return  sysQuartzJobService.delete(arr) ;
+        boolean b = sysQuartzJobService.doRemoveeIds(arr);
+        return Result.SUCCESS(b);
     }
 
     /**

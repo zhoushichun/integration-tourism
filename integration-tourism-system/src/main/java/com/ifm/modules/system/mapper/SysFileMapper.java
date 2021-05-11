@@ -1,7 +1,7 @@
 package com.ifm.modules.system.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.ifm.modules.system.entity.SysFile;
+import com.ifm.comment.entity.SysFile;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 

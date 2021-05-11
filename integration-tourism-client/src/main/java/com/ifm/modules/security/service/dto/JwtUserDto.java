@@ -15,21 +15,21 @@ import java.util.Collection;
 @Getter
 public class JwtUserDto implements UserDetails {
 
-    private UserInfo userInfo;
+    private UserInfo user;
     private Collection<? extends GrantedAuthority> authorities;
 
     public JwtUserDto(UserInfo userInfo, Collection<? extends GrantedAuthority> authorities) {
-        this.userInfo = userInfo;
+        this.user = userInfo;
         this.authorities = authorities;
     }
     @Override
     public String getUsername() {
-        return userInfo.getPhone();
+        return user.getPhone();
     }
     @JsonIgnore
     @Override
     public String getPassword() {
-        return userInfo.getPassword();
+        return user.getPassword();
     }
 
     @Override
@@ -58,6 +58,6 @@ public class JwtUserDto implements UserDetails {
     @JsonIgnore
     @Override
     public boolean isEnabled() {
-        return  userInfo.getStatus().toString().equals("0") ? true :false;
+        return  user.getStatus().toString().equals("0") ? true :false;
     }
 }

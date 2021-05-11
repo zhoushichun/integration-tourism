@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ifm.modules.client.mapper.ProjectEvaluationMapper">
+
+
+    <select id="listAlls" resultType="com.ifm.modules.client.entity.vo.EvaluationVo" parameterType="Long">
+    select CAST(AVG(pe.score)AS DECIMAL(10,2)) as score ,count(*) as evaluationNum  from project_evaluation pe
+    where pe.scenic_spot_id=#{id}
+
+    </select>
+</mapper>

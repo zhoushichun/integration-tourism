@@ -35,7 +35,7 @@ public class SysFileController extends BaseController {
 
     @ApiOperation(value = "图片上传", notes = "图片上传")
     @PostMapping("/uploadPictures")
-    public Result uploadPictures(@RequestParam("fileNames") MultipartFile[] files) {
+    public Result uploadPictures(@RequestParam("fileNames") MultipartFile files) {
 
         List list = sysFileService.uploadPictures(files);
 

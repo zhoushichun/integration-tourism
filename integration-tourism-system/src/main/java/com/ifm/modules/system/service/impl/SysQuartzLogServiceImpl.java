@@ -52,7 +52,7 @@ public class SysQuartzLogServiceImpl extends BaseServiceImpl<SysQuartzLogMapper,
         }
 
     @Override
-    public Result delete(long[] arr) {
+    public boolean doRemoveeIds(long[] arr) {
 
         return baseMapper.doRemoveeIds(arr);
 

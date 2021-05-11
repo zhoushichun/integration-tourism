@@ -22,7 +22,7 @@ public interface ISysQuartzLogService extends BaseService<SysQuartzLog> {
 
     Result add(SysQuartzLog entity);
 
-    Result delete(long[] arr);
+    boolean doRemoveeIds(long[] arr);
 
     Result deleteIds(long[] ids);
 

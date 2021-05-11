@@ -72,9 +72,10 @@ public class SysQuartzLogController extends BaseController {
     */
     @ApiOperation(value = "物理删除", notes = "物理删除")
     @PostMapping("/delete")
-    public Result delete(@RequestParam long[] arr){
+    public Result doRemoveeIds(@RequestParam long[] arr){
 
-    return  sysQuartzLogService.delete(arr) ;
+        boolean b = sysQuartzLogService.doRemoveeIds(arr);
+        return Result.SUCCESS(b);
     }
 
     /**

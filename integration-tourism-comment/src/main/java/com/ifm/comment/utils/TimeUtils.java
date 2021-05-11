@@ -949,6 +949,12 @@ public class TimeUtils {
 
 
     public static void main(String[] args) {
+
+        Date dayBegin = getDayBegin();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd 00:00:00");
+        String format = dateFormat.format(dayBegin);
+
+        System.out.println(format);
         System.out.println(getNo(8));
     }
 

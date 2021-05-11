@@ -16,20 +16,19 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.naming.AuthenticationException;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 
 /**
-*
-* @ClassName:系统用户 前端控制器
-* @Description:
-* @author: zhou
-* @date 2021-04-27
-*
-*/
+ * @ClassName:系统用户 前端控制器
+ * @Description:
+ * @author: zhou
+ * @date 2021-04-27
+ */
 @RestController
 @RequestMapping("/system/sys-user")
-@Api(value="/system/sys-user",tags={"系统用户信息"})
+@Api(value = "/system/sys-user", tags = {"系统用户信息"})
 @Slf4j
 public class SysUserController extends BaseController {
 
@@ -37,20 +36,20 @@ public class SysUserController extends BaseController {
     ISysUserService sysUserService;
 
     /**
-    * @Title: 查询信息
-    * @Description: <p></p>
-    * @author: zhou
-    * @date 2021-04-27
-    * @param:
-    * @return:
-    * @throws
-    */
+     * @throws
+     * @Title: 查询信息
+     * @Description: <p></p>
+     * @author: zhou
+     * @date 2021-04-27
+     * @param:
+     * @return:
+     */
     @ApiOperation(value = "查询信息", notes = "查询信息")
     @PostMapping("/list")
-    public Result list(){
-    List<SysUser> list = sysUserService.listAll();
+    public Result list() {
+        List<SysUser> list = sysUserService.listAll();
         System.out.println(list);
-    return Result.SUCCESS(list);
+        return Result.SUCCESS(list);
 
 
     }
@@ -68,13 +67,28 @@ public class SysUserController extends BaseController {
     public Result getToken(@RequestBody AuthUserDto authUser, HttpServletRequest request) {
 
 
-        String login = sysUserService.login(authUser ,request);
+        String login = sysUserService.login(authUser, request);
 
         if (login.contains("登录成功")) {
             return Result.SUCCESS(login);
         }
 
         return Result.FAIL(login);
+    }
+
+
+    @ApiOperation(value = "生成验证码")
+    @PostMapping("/verifyCode")
+    public void verifyCode(HttpServletRequest request, HttpServletResponse response) {
+        sysUserService.getVerifyCode(request, response);
+    }
+
+
+    @ApiOperation(value = "发送邮件")
+    @PostMapping("/sendMail")
+    public Result sendMail() {
+        String str = sysUserService.sendMail();
+        return Result.SUCCESS(str);
     }
 
 

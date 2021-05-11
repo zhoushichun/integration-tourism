@@ -2,7 +2,7 @@ package ${package.Mapper};
 
 import ${package.Entity}.${entity};
 import ${superMapperClassPackage};
-import com.yfm.comment.result.Result;
+import com.ifm.comment.result.Result;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 

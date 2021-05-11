@@ -10,12 +10,18 @@ spring:
       max-request-size: 1024MB
   redis:
     #数据库索引
-    database: 3
-    host: 127.0.0.1
+    database: 10
+    host: 121.36.61.228
     port: 6379
-    password:
+    password: ifmtechMARSPARK2020
     #连接超时时间
     timeout: 5000
+    lettuce:
+      pool:
+        max-idle: 30
+        max-active: 8
+        max-wait: 10000
+        min-idle: 10
 
 #logging:
 #  config: classpath:config/logback-spring.xml
@@ -29,3 +35,6 @@ mybatis-plus:
       id-type:
       field-strategy: not_null
       db-type: mysql
+wxMini:
+  appId: wx6a0aa0984a7e9bd4
+  secret: f612ff694b0c9e1300b8e9cab73a3603

@@ -48,6 +48,7 @@
         <poi.version>4.1.2</poi.version>
         <xstream.version>1.4.12</xstream.version>
 
+
     </properties>
     <!-- 子模块继承之后，提供作用：锁定版本+子modlue不用写groupId和version  -->
     <dependencyManagement>
@@ -98,6 +99,17 @@
                 <version>3.0.3</version>
             </dependency>
 
+            <!--阿里云短信包-->
+            <dependency>
+                <groupId>com.aliyun</groupId>
+                <artifactId>aliyun-java-sdk-core</artifactId>
+                <version>4.4.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.aliyun</groupId>
+                <artifactId>aliyun-java-sdk-dysmsapi</artifactId>
+                <version>1.0.0</version>
+            </dependency>
 
 
             <!--Spring boot Redis-->

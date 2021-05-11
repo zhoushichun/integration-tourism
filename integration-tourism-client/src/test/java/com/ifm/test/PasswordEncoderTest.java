@@ -1,6 +1,7 @@
 package com.ifm.test;
 
 
+import cn.hutool.core.util.RandomUtil;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 public class PasswordEncoderTest {
@@ -9,6 +10,10 @@ public class PasswordEncoderTest {
 
         BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
         String encode = bCryptPasswordEncoder.encode("123456");
-        System.out.println(encode);
+
+        int i = RandomUtil.randomInt(1, 100);
+
+        System.out.println(i);
+
     }
 }

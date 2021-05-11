@@ -3,13 +3,12 @@ package ${package.ServiceImpl};
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.google.common.collect.Lists;
-import com.yfm.comment.result.RCode;
-import com.yfm.comment.result.Result;
+import com.ifm.comment.result.Result;
+import com.ifm.comment.result.Result;
 import org.springframework.stereotype.Service;
 import ${package.Entity}.${table.entityName};
 import ${package.Mapper}.${table.mapperName};
 import ${package.Service}.${table.serviceName};
-import BaseServiceImpl;
 import java.util.ArrayList;
 import java.util.List;
 

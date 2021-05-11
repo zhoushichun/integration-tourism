@@ -21,6 +21,7 @@ public abstract class BaseEntity <T extends Model> extends Model<T> {
     @ApiModelProperty("ID")
     @TableId(value = "id",type= IdType.ID_WORKER)
     @JsonSerialize(using= ToStringSerializer.class)
+
     protected Long id;
 
     @Override

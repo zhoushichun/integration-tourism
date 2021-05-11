@@ -1,8 +1,8 @@
 
 package ${package.Service};
 
-import com.yfm.comment.result.Result;
-import BaseService;
+import com.ifm.comment.result.Result;
+import com.ifm.comment.base.service.BaseService;
 import com.yfm.system.entity.${table.entityName};
 import java.util.List;
 /**

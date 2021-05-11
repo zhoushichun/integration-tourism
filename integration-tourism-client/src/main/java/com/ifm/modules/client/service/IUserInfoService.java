@@ -2,6 +2,8 @@
 package com.ifm.modules.client.service;
 
 import com.ifm.comment.base.service.BaseService;
+import com.ifm.comment.result.Result;
+import com.ifm.modules.client.entity.DTO.UserInfoVo;
 import com.ifm.modules.client.entity.UserInfo;
 import com.ifm.modules.security.service.dto.AuthUserDto;
 
@@ -23,6 +25,15 @@ public interface IUserInfoService extends BaseService<UserInfo> {
 
     UserInfo findByName(String username);
 
-    String login(AuthUserDto authUser, HttpServletRequest request);
+    Result login(AuthUserDto authUser, HttpServletRequest request);
 
+    String messagesLogin(String phone);
+
+    String verificationCode(String u_phone ,String code);
+
+    UserInfo QueryUser(Long accountId);
+
+    Result WeChatLogin(String code, HttpServletRequest request);
+
+    String addWeChat(UserInfoVo userInfoVo);
 }

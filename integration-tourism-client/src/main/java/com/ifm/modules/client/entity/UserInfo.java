@@ -23,7 +23,6 @@ import java.time.LocalDateTime;
 @ApiModel(value="UserInfo对象", description="用户")
 public class UserInfo extends DataEntity<UserInfo> {
 
-
     @ApiModelProperty(value = "手机号码")
     private String phone;
 
@@ -56,6 +55,12 @@ public class UserInfo extends DataEntity<UserInfo> {
 
     @ApiModelProperty(value = "最后登录IP")
     private String logonIp;
+
+    @ApiModelProperty(value = "openid")
+    private String openId;
+
+    @ApiModelProperty(value = "账号")
+    private String account;
 
 
 

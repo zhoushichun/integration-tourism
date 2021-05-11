@@ -1,9 +1,9 @@
 package ${package.Controller};
 
-import com.yfm.comment.result.Result;
-import BaseController;
-import com.yfm.system.entity.${table.entityName};
-import com.yfm.system.service.${table.serviceName};
+import com.ifm.comment.result.Result;
+import com.ifm.comment.base.controller.BaseController;
+import com.ifm.modules.system.entity.${table.entityName};
+import com.ifm.modules.system.service.${table.serviceName};
 import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
