@@ -48,6 +48,7 @@ public class TokenProvider implements InitializingBean {
                 .build();
         jwtBuilder = Jwts.builder()
                 .signWith(key, SignatureAlgorithm.HS512);
+        
     }
 
     /**
